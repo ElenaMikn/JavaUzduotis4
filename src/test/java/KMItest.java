@@ -120,13 +120,11 @@ public class KMItest {
     @Test
     public void SkaiciuotiVyrasBeParametru() {
         KMI kmi = new KMI(180.0, 160.0, false);
-        //160/1.8^2
         assertEquals(kmi.skaiciuoti(), 49.38, 1);
     }
     @Test
     public void SkaiciuotiMoterisSuParametrais() {
         KMI kmi = new KMI();
-        //160/1.8^2
         assertEquals(kmi.skaiciuoti(180.0, 160.0, true), 49.38, 1);
     }
     @Test
@@ -140,25 +138,47 @@ public class KMItest {
     @Test
     public void GetKategorijaMoterisBeParametru() {
         KMI kmi = new KMI(180.0, 160.0, true);
-        //160/1.8^2
         assertEquals(kmi.GetKategorija(),"ligotai nutukęs žmogus");
     }
     @Test
     public void GetKategorijaVyrasBeParametru() {
         KMI kmi = new KMI(180.0, 160.0, false);
-        //160/1.8^2
         assertEquals(kmi.GetKategorija(), "ligotai nutukęs žmogus");
     }
-    @Test
-    public void GetKategorijaMoterisSuParametrais() {
-        KMI kmi = new KMI();
-        //160/1.8^2
-        assertEquals(kmi.GetKategorija(180.0, 160.0, true), "ligotai nutukęs žmogus");
-    }
-    @Test
+     @Test
     public void GetKategorijaVyrasSuParametrais() {
         KMI kmi = new KMI();
-        //160/1.8^2
         assertEquals(kmi.GetKategorija(180.0, 160.0, false), "ligotai nutukęs žmogus");
     }
+    @Test
+    public void GetKategorijaBadaujantis() {
+        KMI kmi = new KMI();
+        assertEquals(kmi.GetKategorija(180.0, 40.0, false), "badaujantis žmogus");
+    }
+    @Test
+    public void GetKategorijaLiesas() {
+        KMI kmi = new KMI();
+        assertEquals(kmi.GetKategorija(180.0, 50.0, false), "liesas žmogus");
+    }
+    @Test
+    public void GetKategorijaNormalaus() {
+        KMI kmi = new KMI();
+        assertEquals(kmi.GetKategorija(180.0, 60.0, false), "normalaus svorio žmogus");
+    }
+    @Test
+    public void GetKategorijaAntsvoris() {
+        KMI kmi = new KMI();
+        assertEquals(kmi.GetKategorija(180.0, 90.0, false), "turintis antsvorio žmogus");
+    }
+    @Test
+    public void GetKategorijaNutukęs() {
+        KMI kmi = new KMI();
+        assertEquals(kmi.GetKategorija(180.0, 100.0, false), "nutukęs žmogus");
+    }
+    @Test
+    public void GetKategorijaLigotaiNutukęs () {
+        KMI kmi = new KMI();
+        assertEquals(kmi.GetKategorija(180.0, 160.0, true), "ligotai nutukęs žmogus");
+    }
+
 }
