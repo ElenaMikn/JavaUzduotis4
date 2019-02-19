@@ -85,9 +85,13 @@ public class KMI {
     public String GetKategorija(double ugis, double svoris, boolean moteris)
     {
         double s=this.skaiciuoti(ugis,svoris,moteris);
-        if(s>40) return "ligotai nutukęs žmogus";
-        else
-        return "";
+        if(s<15) return "badaujantis žmogus";
+        else if(s<18.5) return "liesas žmogus";
+        else if(s<25) return "normalaus svorio žmogus";
+        else if(s<30) return "turintis antsvorio žmogus";
+        else if(s<40) return "nutukęs žmogus";
+        else return "ligotai nutukęs žmogus";
+
     }
 
 }
