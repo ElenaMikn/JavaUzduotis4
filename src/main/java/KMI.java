@@ -19,7 +19,6 @@ Skaitykite daugiau: https://www.delfi.lt/gyvenimas/5braskes/kaip-apskaiciuoti-id
 public class KMI {
     private double ugis;
     private double svoris;
-    private boolean moteris;
 
     public void setUgis(double ugis) {
         if(ugis<=30)
@@ -45,10 +44,6 @@ public class KMI {
         this.svoris = svoris;
     }
 
-    public void setMoteris(boolean moteris) {
-        this.moteris = moteris;
-    }
-
     public double getUgis() {
         return ugis;
     }
@@ -57,34 +52,29 @@ public class KMI {
         return svoris;
     }
 
-    public boolean isMoteris() {
-        return moteris;
-    }
-
-    public KMI(double ugis, double svoris, boolean moteris)
+    public KMI(double ugis, double svoris)
     {
         this.setUgis(ugis);
         this.setSvoris(svoris);
-        this.setMoteris(moteris);
     }
     public KMI() {
 
     }
     public double skaiciuoti()
     {
-        return this.skaiciuoti(this.ugis,this.svoris,this.moteris);
+        return this.skaiciuoti(this.ugis,this.svoris);
     }
-    public double skaiciuoti(double ugis, double svoris, boolean moteris)
+    public double skaiciuoti(double ugis, double svoris)
     {
         return svoris / Math.pow(ugis/100,2);
     }
     public String GetKategorija()
     {
-        return this.GetKategorija(this.ugis,this.svoris,this.moteris);
+        return this.GetKategorija(this.ugis,this.svoris);
     }
-    public String GetKategorija(double ugis, double svoris, boolean moteris)
+    public String GetKategorija(double ugis, double svoris)
     {
-        double s=this.skaiciuoti(ugis,svoris,moteris);
+        double s=this.skaiciuoti(ugis,svoris);
         if(s<15) return "badaujantis žmogus";
         else if(s<18.5) return "liesas žmogus";
         else if(s<25) return "normalaus svorio žmogus";

@@ -16,7 +16,7 @@ public class KMItest {
 
     @Test
     public void KlaseSusikuriaSuPrametraisPatikrinamParametrus() {
-        KMI kmi = new KMI(180.0, 160.0, true);
+        KMI kmi = new KMI(180.0, 160.0);
         assertEquals(kmi.getUgis(), 180, 0);
         assertEquals(kmi.getSvoris(), 160, 0);
     }
@@ -116,7 +116,7 @@ public class KMItest {
     public void SkaiciuotiSuParametrais() {
         KMI kmi = new KMI();
         //160/1.8^2
-        assertEquals(kmi.skaiciuoti(180.0, 160.0, false), 49.38, 1);
+        assertEquals(kmi.skaiciuoti(180.0, 160.0), 49.38, 1);
     }
 
     @Test

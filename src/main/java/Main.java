@@ -9,7 +9,7 @@ public class Main {
         svoris =  Double.parseDouble(scan.nextLine());
         System.out.println("Iveskite ugi:");
         ugis =  Double.parseDouble(scan.nextLine());
-        KMI kmi = new KMI( ugis,svoris, false);
+        KMI kmi = new KMI( ugis,svoris);
         double indeksas= kmi.skaiciuoti();
         System.out.println("Jusu indeksas yra:"+indeksas);
         System.out.println("Jusu kategorija yra:"+kmi.GetKategorija());
