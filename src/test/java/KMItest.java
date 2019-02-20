@@ -10,7 +10,7 @@ public class KMItest {
 
     @Test
     public void KlaseSusikuriaSuPrametrais() {
-        KMI kmi = new KMI(180.0, 160.0, true);
+        KMI kmi = new KMI(180.0, 160.0);
         assertNotNull(kmi);
     }
 
@@ -19,8 +19,6 @@ public class KMItest {
         KMI kmi = new KMI(180.0, 160.0, true);
         assertEquals(kmi.getUgis(), 180, 0);
         assertEquals(kmi.getSvoris(), 160, 0);
-        assertTrue(kmi.isMoteris());
-
     }
 
     @Test
@@ -32,9 +30,6 @@ public class KMItest {
 
         kmi.setSvoris(160);
         assertEquals(kmi.getSvoris(), 160, 0);
-
-        kmi.setMoteris(false);
-        assertFalse(kmi.isMoteris());
     }
 
     @Test
@@ -112,73 +107,57 @@ public class KMItest {
     }
 
     @Test
-    public void SkaiciuotiMoterisBeParametru() {
-        KMI kmi = new KMI(180.0, 160.0, true);
-        //160/1.8^2
+    public void SkaiciuotiBeParametru() {
+        KMI kmi = new KMI(180.0, 160.0);
         assertEquals(kmi.skaiciuoti(), 49.38, 1);
     }
+
     @Test
-    public void SkaiciuotiVyrasBeParametru() {
-        KMI kmi = new KMI(180.0, 160.0, false);
-        assertEquals(kmi.skaiciuoti(), 49.38, 1);
-    }
-    @Test
-    public void SkaiciuotiMoterisSuParametrais() {
-        KMI kmi = new KMI();
-        assertEquals(kmi.skaiciuoti(180.0, 160.0, true), 49.38, 1);
-    }
-    @Test
-    public void SkaiciuotiVyrasSuParametrais() {
+    public void SkaiciuotiSuParametrais() {
         KMI kmi = new KMI();
         //160/1.8^2
         assertEquals(kmi.skaiciuoti(180.0, 160.0, false), 49.38, 1);
     }
-    //**
 
     @Test
-    public void GetKategorijaMoterisBeParametru() {
-        KMI kmi = new KMI(180.0, 160.0, true);
-        assertEquals(kmi.GetKategorija(),"ligotai nutukęs žmogus");
-    }
-    @Test
-    public void GetKategorijaVyrasBeParametru() {
-        KMI kmi = new KMI(180.0, 160.0, false);
+    public void GetKategorijaBeParametru() {
+        KMI kmi = new KMI(180.0, 160.0);
         assertEquals(kmi.GetKategorija(), "ligotai nutukęs žmogus");
     }
      @Test
-    public void GetKategorijaVyrasSuParametrais() {
+    public void GetKategorijaSuParametrais() {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 160.0, false), "ligotai nutukęs žmogus");
+        assertEquals(kmi.GetKategorija(180.0, 160.0), "ligotai nutukęs žmogus");
     }
     @Test
     public void GetKategorijaBadaujantis() {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 40.0, false), "badaujantis žmogus");
+        assertEquals(kmi.GetKategorija(180.0, 40.0), "badaujantis žmogus");
     }
     @Test
     public void GetKategorijaLiesas() {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 50.0, false), "liesas žmogus");
+        assertEquals(kmi.GetKategorija(180.0, 50.0), "liesas žmogus");
     }
     @Test
     public void GetKategorijaNormalaus() {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 60.0, false), "normalaus svorio žmogus");
+        assertEquals(kmi.GetKategorija(180.0, 60.0), "normalaus svorio žmogus");
     }
     @Test
     public void GetKategorijaAntsvoris() {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 90.0, false), "turintis antsvorio žmogus");
+        assertEquals(kmi.GetKategorija(180.0, 90.0), "turintis antsvorio žmogus");
     }
     @Test
     public void GetKategorijaNutukęs() {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 100.0, false), "nutukęs žmogus");
+        assertEquals(kmi.GetKategorija(180.0, 100.0), "nutukęs žmogus");
     }
     @Test
     public void GetKategorijaLigotaiNutukęs () {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 160.0, true), "ligotai nutukęs žmogus");
+        assertEquals(kmi.GetKategorija(180.0, 160.0), "ligotai nutukęs žmogus");
     }
 
 }
