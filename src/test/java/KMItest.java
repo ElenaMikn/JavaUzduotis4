@@ -17,8 +17,8 @@ public class KMItest {
     @Test
     public void KlaseSusikuriaSuPrametraisPatikrinamParametrus() {
         KMI kmi = new KMI(180.0, 160.0);
-        assertEquals(kmi.getUgis(), 180, 0);
-        assertEquals(kmi.getSvoris(), 160, 0);
+        assertEquals( 180,kmi.getUgis(), 0);
+        assertEquals( 160, kmi.getSvoris(),0);
     }
 
     @Test
@@ -26,10 +26,10 @@ public class KMItest {
         KMI kmi = new KMI();
 
         kmi.setUgis(180);
-        assertEquals(kmi.getUgis(), 180, 0);
+        assertEquals( 180, kmi.getUgis(),0);
 
         kmi.setSvoris(160);
-        assertEquals(kmi.getSvoris(), 160, 0);
+        assertEquals( 160, kmi.getSvoris(),0);
     }
 
     @Test
@@ -48,7 +48,7 @@ public class KMItest {
     public void SetUgisValidationMinPass() {
         KMI kmi = new KMI();
         kmi.setUgis(30.01);
-        assertEquals(kmi.getUgis(), 30.01, 0);
+        assertEquals( 30.01,kmi.getUgis(), 0);
     }
 
     @Test
@@ -66,7 +66,7 @@ public class KMItest {
     public void SetUgisValidationMaxPass() {
         KMI kmi = new KMI();
         kmi.setUgis(239.99);
-        assertEquals(kmi.getUgis(), 239.99, 0);
+        assertEquals( 239.99, kmi.getUgis(),0);
     }
 
     @Test
@@ -85,7 +85,7 @@ public class KMItest {
     public void SetSvorisValidationMinPass() {
         KMI kmi = new KMI();
         kmi.setSvoris(3.01);
-        assertEquals(kmi.getSvoris(), 3.01, 0);
+        assertEquals( 3.01, kmi.getSvoris(),0);
     }
 
     @Test
@@ -103,13 +103,13 @@ public class KMItest {
     public void SetSvorisValidationMaxPass() {
         KMI kmi = new KMI();
         kmi.setSvoris(239.99);
-        assertEquals(kmi.getSvoris(), 239.99, 0);
+        assertEquals(239.99, kmi.getSvoris(), 0);
     }
 
     @Test
     public void SkaiciuotiBeParametru() {
         KMI kmi = new KMI(180.0, 160.0);
-        assertEquals(kmi.skaiciuoti(), 49.38, 1);
+        assertEquals(49.38, kmi.skaiciuoti(), 1);
     }
 
     @Test
@@ -122,42 +122,42 @@ public class KMItest {
     @Test
     public void GetKategorijaBeParametru() {
         KMI kmi = new KMI(180.0, 160.0);
-        assertEquals(kmi.GetKategorija(), "ligotai nutukęs žmogus");
+        assertEquals( "ligotai nutukęs žmogus",kmi.GetKategorija());
     }
      @Test
     public void GetKategorijaSuParametrais() {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 160.0), "ligotai nutukęs žmogus");
+        assertEquals( "ligotai nutukęs žmogus",kmi.GetKategorija(180.0, 160.0));
     }
     @Test
     public void GetKategorijaBadaujantis() {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 40.0), "badaujantis žmogus");
+        assertEquals("badaujantis žmogus", kmi.GetKategorija(180.0, 40.0) );
     }
     @Test
     public void GetKategorijaLiesas() {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 50.0), "liesas žmogus");
+        assertEquals("liesas žmogus", kmi.GetKategorija(180.0, 50.0));
     }
     @Test
     public void GetKategorijaNormalaus() {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 60.0), "normalaus svorio žmogus");
+        assertEquals("normalaus svorio žmogus", kmi.GetKategorija(180.0, 60.0));
     }
     @Test
     public void GetKategorijaAntsvoris() {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 90.0), "turintis antsvorio žmogus");
+        assertEquals("turintis antsvorio žmogus", kmi.GetKategorija(180.0, 90.0));
     }
     @Test
-    public void GetKategorijaNutukęs() {
+    public void GetKategorijaNutukes() {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 100.0), "nutukęs žmogus");
+        assertEquals("nutukęs žmogus", kmi.GetKategorija(180.0, 100.0));
     }
     @Test
-    public void GetKategorijaLigotaiNutukęs () {
+    public void GetKategorijaLigotaiNutukes () {
         KMI kmi = new KMI();
-        assertEquals(kmi.GetKategorija(180.0, 160.0), "ligotai nutukęs žmogus");
+        assertEquals("ligotai nutukęs žmogus", kmi.GetKategorija(180.0, 160.0));
     }
 
 }
